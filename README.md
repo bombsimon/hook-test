@@ -7,3 +7,7 @@
 ## Test
 
 This is to test commit behaviour.
+
+## Signing
+
+Is this signed?
