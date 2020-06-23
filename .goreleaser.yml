@@ -3,8 +3,37 @@ project_name: hook-test
 
 release:
   github:
-    owner: golangci
-    name: golangci-lint
+    owner: bombsimon
+    name: hook-test
+
+builds:
+  - binary: hook-test
+    goos:
+      - darwin
+      - windows
+      - linux
+      - freebsd
+    goarch:
+      - amd64
+      - arm64
+      - arm
+      - 386
+      - ppc64le
+      - s390x
+      - mips64
+      - mips64le
+    goarm:
+      - 6
+      - 7
+    env:
+      - CGO_ENABLED=0
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: freebsd
+        goarch: arm64
+    main: ./cmd/hook/
+    ldflags: -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
 
 nfpms:
   -
