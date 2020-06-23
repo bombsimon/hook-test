@@ -7,6 +7,7 @@ release:
     name: golangci-lint
 
 nfpms:
+  -
     id: hook-test-nfpm-id
     package_name: hook-test
     file_name_template: "'{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
