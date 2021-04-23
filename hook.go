@@ -1,5 +1,7 @@
 package hooktest
 
+import "fmt"
+
 type HookTest struct {
 	isTested bool
 }
@@ -24,4 +26,8 @@ func AlsoNotTested(a, b int) int {
 	}
 
 	return a
+}
+
+func AddsCodeNotTested() {
+	fmt.Println("This should fail because it decreses test doverage")
 }
