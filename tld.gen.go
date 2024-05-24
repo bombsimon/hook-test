@@ -12,7 +12,6 @@ import (
 )
 
 const (
-	AAA                      TLD = "AAA"
 	AARP                     TLD = "AARP"
 	ABB                      TLD = "ABB"
 	ABBOTT                   TLD = "ABBOTT"
