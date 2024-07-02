@@ -19,7 +19,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.number }}
-          BODY: >-
+          BODY: |
             In order for a pull request adding a linter to be reviewed, the linter and the PR must follow some requirements.
 
             - [ ] The CLA must be signed
