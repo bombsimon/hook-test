@@ -17,8 +17,8 @@ jobs:
         run: |
           comment_exist=$(gh pr view "$NUMBER" \
             --json comments \
-            --jq '.comments[].author | select(.login=="github-actions" \
-          ) | .login' | wc -l)
+            --jq '.comments[].author | select(.login=="github-actions") | .login' \
+            | wc -l)
           [ "$comment_exist" -gt 0 ] && edit_last="--edit-last"
           gh pr comment "$NUMBER" --body "$BODY" "$edit_last"
         env:
