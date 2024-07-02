@@ -10,7 +10,7 @@ jobs:
     if: "github.event.label.name == 'linter: new'"
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      pull-requests: write
 
     steps:
       - name: Add checklist
