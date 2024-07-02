@@ -14,7 +14,13 @@ jobs:
 
     steps:
       - name: Add checklist
-        run: gh pr comment "$NUMBER" --body "$BODY"
+        run: |
+          comment_exist=$(gh pr view \
+            --json comments \
+            --jq '.comments[].author | select(.login=="github-actions" \
+          ) | .login' | wc -l)
+          [ "$comment_exist" -gt 0 ] && edit_last="--edit-last"
+          gh pr comment "$NUMBER" --body "$BODY" "$edit_last"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
