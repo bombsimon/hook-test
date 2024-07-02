@@ -11,3 +11,7 @@ This is to test commit behaviour.
 ## Signing
 
 Is this signed?
+
+## Increment here
+
+Number: 1
