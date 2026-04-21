@@ -1,0 +1,21 @@
+---
+name: PR
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  golangci-lint:
+    name: golangci-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version: stable
+      - uses: golangci/golangci-lint-action@v9
+        with:
+          version: v2.10.0
